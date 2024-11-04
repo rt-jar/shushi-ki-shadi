@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shubham and Shivangi's Wedding</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      background-color: #d69fa8;
+      color: #fff;
+      padding: 30px 0;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .section {
+      margin: 30px 0;
+    }
+    .countdown, .details, .rsvp {
+      background-color: #f0e4e8;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .countdown h2, .welcome h2, .details h2, .gallery h2, .rsvp h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .timer {
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .timer div {
+      font-weight: bold;
+      color: #d69fa8;
+    }
+    .details {
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .rsvp a {
+      display: inline-block;
+      background-color: #d69fa8;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Shubham and Shivangi's Wedding</h1>
+  <p>Join us on November 22, 2024</p>
+</header>
+
+<section class="section countdown">
+  <h2>Countdown to Our Big Day</h2>
+  <div id="timer" class="timer">
+    <div id="days">0</div> Days
+    <div id="hours">0</div> Hours
+    <div id="minutes">0</div> Minutes
+    <div id="seconds">0</div> Seconds
+  </div>
+</section>
+
+<section class="section welcome">
+  <h2>Welcome!</h2>
+  <p>We are so excited to share this special day with our family and friends. We've created this website to share all the important details with you as we count down to our wedding.</p>
+</section>
+
+<section class="section details">
+  <h2>Event Details</h2>
+  <p><strong>When:</strong> Sunday, November 22, 2024</p>
+  <p><strong>Where:</strong> Amaut, Varanasi</p>
+  <p><strong>Time:</strong> Ceremony at 8:00 PM, Reception to follow</p>
+</section>
+
+<section class="section gallery">
+  <h2>Our Journey</h2>
+  <div>
+    <img src="image1.jpg" alt="Memory 1">
+    <img src="image2.jpg" alt="Memory 2">
+    <img src="image3.jpg" alt="Memory 3">
+    <img src="image4.jpg" alt="Memory 4">
+  </div>
+</section>
+
+<section class="section rsvp">
+  <h2>RSVP</h2>
+  <p>Please let us know if you’ll be able to join us on our special day.</p>
+  <a href="rsvp.html">RSVP Here</a>
+</section>
+
+<footer>
+  <p>&copy; 2024 Shubham & Shivangi's Wedding</p>
+</footer>
+
+<script>
+  // Countdown Timer
+  const weddingDate = new Date('2024-11-22T20:00:00').getTime();
+
+  const countdown = () => {
+    const now = new Date().getTime();
+    const gap = weddingDate - now;
+
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const days = Math.floor(gap / day);
+    const hours = Math.floor((gap % day) / hour);
+    const minutes = Math.floor((gap % hour) / minute);
+    const seconds = Math.floor((gap % minute) / second);
+
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+  };
+
+  setInterval(countdown, 1000);
+</script>
+
+</body>
+</html>
